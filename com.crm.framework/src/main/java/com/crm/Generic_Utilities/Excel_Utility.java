@@ -24,4 +24,13 @@ public class Excel_Utility {
 		return format.formatCellValue(book.getSheet(sheetName).getRow(RowNum).getCell(cellNum));
 	}
 
+	public int getLastRowcountFromExcel(String sheetName) throws Throwable
+	{
+		FileInputStream fis = new FileInputStream("./Book3.xlsx");
+		Workbook book = WorkbookFactory.create(fis);
+		Sheet sh = book.getSheet(sheetName);
+		int lastRowCount = sh.getLastRowNum();
+		return lastRowCount;
+		
+	}
 }
